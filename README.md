@@ -35,6 +35,9 @@ Danach alle 4 LAZ-Dateien per pdal pipeline (Dateiname: pdal-pipeline_merge_and_
     "2607500_1228000.ch.so.agi.lidar_2019.dsm.laz",
     "2607500_1228500.ch.so.agi.lidar_2019.dsm.laz",
     {
+        "type":"filters.merge"
+    },
+    {
         "type":"writers.copc",
         "filename":"solothurn.copc.laz"
     }
@@ -46,6 +49,14 @@ und Aufruf Kommando mit
 ```
 pdal pipeline pdal-pipeline_merge_and_convert-to-copc.json
 ```
+
+oder mit der docker-Variante (das docker pull pdal/pdal muss nur 1x gemacht werden; bei der docker-Variante muss bei den Dateipfaden bei der Verwendung wie unten jeweils ein /opt/data vorangestellt werden, bei sämtlichen input Files und output files - weil das aktuelle Directory im docker unter /opt/data gemountet ist):
+
+```
+docker pull pdal/pdal
+docker run -it -v $(pwd):/opt/data/ pdal/pdal pdal pipeline /opt/data/pdal-pipeline_merge_and_convert-to-copc.json
+```
+
 
 DTM (GeoTIFF)
 
