@@ -27,6 +27,25 @@ DOM (LAZ)
 wget https://files.geo.so.ch/ch.so.agi.lidar_2019.dsm/aktuell/2607000_1228000.ch.so.agi.lidar_2019.dsm.laz https://files.geo.so.ch/ch.so.agi.lidar_2019.dsm/aktuell/2607000_1228500.ch.so.agi.lidar_2019.dsm.laz https://files.geo.so.ch/ch.so.agi.lidar_2019.dsm/aktuell/2607500_1228000.ch.so.agi.lidar_2019.dsm.laz https://files.geo.so.ch/ch.so.agi.lidar_2019.dsm/aktuell/2607500_1228500.ch.so.agi.lidar_2019.dsm.laz
 
 ```
+Danach alle 4 LAZ-Dateien per pdal pipeline (Dateiname: pdal-pipeline_merge_and_convert-to-copc.json) in eine Datei mergen und nach copc konvertieren (braucht mindestens PDAL 2.4):
+```
+[
+    "2607000_1228000.ch.so.agi.lidar_2019.dsm.laz",
+    "2607000_1228500.ch.so.agi.lidar_2019.dsm.laz",
+    "2607500_1228000.ch.so.agi.lidar_2019.dsm.laz",
+    "2607500_1228500.ch.so.agi.lidar_2019.dsm.laz",
+    {
+        "type":"writers.copc",
+        "filename":"solothurn.copc.laz"
+    }
+]
+```
+
+und Aufruf Kommando mit
+
+```
+pdal pipeline pdal-pipeline_merge_and_convert-to-copc.json
+```
 
 DTM (GeoTIFF)
 
