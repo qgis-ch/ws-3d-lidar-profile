@@ -78,6 +78,7 @@ gdalwarp -ot FLOAT32 -of COG -t_srs EPSG:2056 -co COMPRESS=DEFLATE -co OVERVIEW_
 ## 3D Szene öffnen und einrichten
 Neue 3D Ansicht als separates Fenster oder dock hinzufügen über Menü "Ansicht" → "3D Kartenansichten" → "Neue 3D-Kartenansicht".
 
+![image](https://user-images.githubusercontent.com/884476/224544908-b1e6b7f8-8475-492e-83c9-bb7047ba026a.png)
 
 
 ## Navigation in 3D-Szene
