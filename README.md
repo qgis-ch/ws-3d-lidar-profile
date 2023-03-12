@@ -80,6 +80,10 @@ Neue 3D Ansicht als separates Fenster oder dock hinzufügen über Menü "Ansicht
 
 ![image](https://user-images.githubusercontent.com/884476/224544908-b1e6b7f8-8475-492e-83c9-bb7047ba026a.png)
 
+Verfügbare Interaktionswerkzeuge in der 3D-Szene:
+
+![image](https://user-images.githubusercontent.com/884476/224545483-3af8bee9-4e20-4db0-8676-6b8e1c3acb87.png)
+
 
 ## Navigation in 3D-Szene
 
