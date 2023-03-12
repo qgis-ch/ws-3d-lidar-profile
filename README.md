@@ -110,6 +110,9 @@ Verfügbare Interaktionswerkzeuge in der 3D-Szene:
 * Plus/Minus Buttons zum Ein/Auszoomen
 * Buttons zum nach Kippen der Szene
 
+![image](https://user-images.githubusercontent.com/884476/224546406-c54decda-6b73-4350-80df-4a590217fc79.png)
+
+
 ## Ausblick
 
 ### Konkret in der Pipeline
