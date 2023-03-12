@@ -75,6 +75,11 @@ Danach werden alle 4 Datein in ein COG (cloud optimized GeoTIFF mit Pyramiden) z
 gdalwarp -ot FLOAT32 -of COG -t_srs EPSG:2056 -co COMPRESS=DEFLATE -co OVERVIEW_RESAMPLING=CUBIC *.tif solothurn_dtm_2019_25cm.tif
 ```
 
+## 3D Szene öffnen und einrichten
+Neue 3D Ansicht als separates Fenster oder dock hinzufügen über Menü "Ansicht" → "3D Kartenansichten" → "Neue 3D-Kartenansicht".
+
+
+
 ## Navigation in 3D-Szene
 
 ### Mit Maus
@@ -92,6 +97,13 @@ gdalwarp -ot FLOAT32 -of COG -t_srs EPSG:2056 -co COMPRESS=DEFLATE -co OVERVIEW_
 * Ctrl Cursor oben/unten: Blickrichtung nach oben / unten ändern
 * Page up: Lift nach oben nehmen (Änderung Seehöhe Betrachter)
 * Page down: Lift nach unten nehmen (Änderung Seehöhe Betrachter)
+
+### Mit Navigations-Widget
+* Rotation über Kompassrose
+* Buttons hoch/runter für vorwärts/rückwärtsbewegen
+* Buttons links und rechts für nach links/rechts bewegen
+* Plus/Minus Buttons zum Ein/Auszoomen
+* Buttons zum nach Kippen der Szene
 
 ## Ausblick
 
@@ -117,3 +129,4 @@ Alle oben erwähnten Processing-Provider können über die Werkzeug-Box aufgeruf
 ### Persönliche Verbesserungswünsche
 * Schönere Darstellung von Liniengeometrien (heute sind sie entweder pixelig dargestellt oder sie verschwinden tw unter dem Gelände). Workaround: Linien mit Offset knapp über der Oberfläche darstellen (z.B. 
 * 3D Attributdatenabfrage: getroffenes Objekt sollte besser hervorgehben werden, z.B: mit Wireframe, andere Farbe oder Bounding box
+* Besseres Messwerkzeug mit Snapping und visuellem Feedback
