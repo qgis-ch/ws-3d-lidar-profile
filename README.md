@@ -75,3 +75,26 @@ Danach werden alle 4 Datein in ein COG (cloud optimized GeoTIFF mit Pyramiden) z
 gdalwarp -ot FLOAT32 -of COG -t_srs EPSG:2056 -co COMPRESS=DEFLATE -co OVERVIEW_RESAMPLING=CUBIC *.tif solothurn_dtm_2019_25cm.tif
 ```
 
+# Ausblick
+
+## Konkret in der Pipeline
+Punktwolken-Processing Provider (kommt mit QGIS 3.32 und benötigt PDAL 2.5, siehe [Github PR](https://github.com/qgis/QGIS/pull/52182))
+* Metadaten aus Punktwolkendatensätzen extrahieren: Anzahl Punkte, Extents, KBS, etc.
+* Punktwolkenformate konvertieren
+* Punktwolkendatensätze umprojizieren
+* KBS für Punktwolkendatensatz setzen
+* Clip: Punktwolken durch Polygone beschneiden
+* Filter: Subsets extrahieren gemäss PDAL Expressions (z.B. Kategorien, Z-Wert-Bereiche, Intensität, etc.)
+* Merge: mehrere Punktwolkendatensätze in eine Datei zusammenfassen
+* Tiling: Punktwolkendaten in Kacheln zerlegen
+* Ausdünnen: ausgedünnte Punktwolkendatensätze erzeugen
+* Ausdehnung: Polygone mit "Fussabdruck" (Ausdehnung) des Punktwolkendatensatzes erzeugen
+* Density: Rasterdateien erzeugen mit "Anzahl Punkte" in jedem Rasterzellwert
+* Export zu Raster: 2D Raster-Oberfläche erzeugen
+* Export zu Raster via TIN: 2D Raster-Oberfläche erzeugen via TIN Interpolation
+* Export zu Vektor: Export der 3D-Punkte in eine PointZ Vektordatei
+
+Alle oben erwähnten Processing-Provider können über die Werkzeug-Box aufgerufen werden (einzelner Analyseschritt), im Batch-Modus verwendet werden oder Teil eines grafischen Processing-Modells sein.
+
+## Persönliche Verbesserungswünsche
+* Schönere Darstellung von Liniengeometrien (heute sind sie entweder pixelig dargestellt oder sie verschwinden tw unter dem Gelände). Workaround: Linien mit Offset knapp über der Oberfläche darstellen (z.B. 
