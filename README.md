@@ -13,10 +13,10 @@ Hier entsteht die Anleitung zum Workshop. Sie finden hier später auch die Downl
 
 ### Beispiel Solothurn
 
-#### Download und Datenaufbereitung LiDAR Daten
+#### Download und Datenaufbereitung
 Download der folgenden Dateien (Kacheln mit je 500m Kantenlänge, KBS: EPSG:2056), separat für DOM (Punktwolken) und DTM (Rasterdatei).
 
-DOM (LAZ)
+##### DOM (LAZ)
 
 * [DOM LAZ-Datei 2607000/1228000](https://files.geo.so.ch/ch.so.agi.lidar_2019.dsm/aktuell/2607000_1228000.ch.so.agi.lidar_2019.dsm.laz)
 * [DOM LAZ-Datei 2607000/1228500](https://files.geo.so.ch/ch.so.agi.lidar_2019.dsm/aktuell/2607000_1228500.ch.so.agi.lidar_2019.dsm.laz)
@@ -58,7 +58,7 @@ docker run -it -v $(pwd):/opt/data/ pdal/pdal pdal pipeline /opt/data/pdal-pipel
 ```
 
 
-DTM (GeoTIFF)
+##### DTM (GeoTIFF)
 
 * [DTM GeoTIFF-Datei 2607000/1228000](https://files.geo.so.ch/ch.so.agi.lidar_2019.dtm/aktuell/2607000_1228000.ch.so.agi.lidar_2019.dtm.tif)
 * [DTM GeoTIFF-Datei 2607000/1228500](https://files.geo.so.ch/ch.so.agi.lidar_2019.dtm/aktuell/2607000_1228500.ch.so.agi.lidar_2019.dtm.tif)
@@ -74,6 +74,19 @@ Danach werden alle 4 Datein in ein COG (cloud optimized GeoTIFF mit Pyramiden) z
 ```
 gdalwarp -ot FLOAT32 -of COG -t_srs EPSG:2056 -co COMPRESS=DEFLATE -co OVERVIEW_RESAMPLING=CUBIC *.tif solothurn_dtm_2019_25cm.tif
 ```
+
+##### SwissBuildings3D
+
+
+##### swissTLM3D
+Die Daten können von der SwissTopo [swissTLM3D Website](https://www.swisstopo.admin.ch/de/geodata/landscape/tlm3d.html#download) heruntergeladen werden. Wir empfehlen die Variante via Geopackage:
+
+```
+wget https://data.geo.admin.ch/ch.swisstopo.swisstlm3d/swisstlm3d_2023-03/swisstlm3d_2023-03_2056_5728.gpkg.zip
+```
+
+Im Datensatz ist die gesamte Schweiz enthalten. Wir können die Objekte via Auswahl auf den gewünschten Ausschnitt reduzieren: im QGIS grafisch selektieren und "Speichern unter".
+
 
 ## 3D Szene öffnen und einrichten
 Neue 3D Ansicht als separates Fenster oder dock hinzufügen über Menü "Ansicht" → "3D Kartenansichten" → "Neue 3D-Kartenansicht".
