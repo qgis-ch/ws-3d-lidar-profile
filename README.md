@@ -75,9 +75,27 @@ Danach werden alle 4 Datein in ein COG (cloud optimized GeoTIFF mit Pyramiden) z
 gdalwarp -ot FLOAT32 -of COG -t_srs EPSG:2056 -co COMPRESS=DEFLATE -co OVERVIEW_RESAMPLING=CUBIC *.tif solothurn_dtm_2019_25cm.tif
 ```
 
-# Ausblick
+## Navigation in 3D-Szene
 
-## Konkret in der Pipeline
+### Mit Maus
+* Linke Maustaste: Position im 3D-Raum verändern
+* Ctrl-Linke Maustaste: Schwenken / Umherschauen / Ausschnitt Blickwinkel verändern
+* Mittlere Maustaste (oder Shift-Linke Maustaste): Gesamte Szene rotieren. Mit 1. Klick wird der Rotationspunkt gesetzt, danach mit Maus-Drag rotieren.
+* Rechte Maustaste: Zoomen
+
+### Mit Tastatur
+* Cursortasten oben/unten: vor- und zurückbewegen
+* Cursortasten links/rechts: nach links/rechts bewegen
+* Shift Cursor links/rechts: Szene rotieren
+* Shift Cursor oben/unten: Szene kippen
+* Ctrl Cursor links/rechts: Schwenken / Umherschauen / Ausschnitt Blickwinkel verändern
+* Ctrl Cursor oben/unten: Blickrichtung nach oben / unten ändern
+* Page up: Lift nach oben nehmen (Änderung Seehöhe Betrachter)
+* Page down: Lift nach unten nehmen (Änderung Seehöhe Betrachter)
+
+## Ausblick
+
+### Konkret in der Pipeline
 Punktwolken-Processing Provider (kommt mit QGIS 3.32 und benötigt PDAL 2.5, siehe [Github PR](https://github.com/qgis/QGIS/pull/52182))
 * Metadaten aus Punktwolkendatensätzen extrahieren: Anzahl Punkte, Extents, KBS, etc.
 * Punktwolkenformate konvertieren
@@ -96,5 +114,6 @@ Punktwolken-Processing Provider (kommt mit QGIS 3.32 und benötigt PDAL 2.5, sie
 
 Alle oben erwähnten Processing-Provider können über die Werkzeug-Box aufgerufen werden (einzelner Analyseschritt), im Batch-Modus verwendet werden oder Teil eines grafischen Processing-Modells sein.
 
-## Persönliche Verbesserungswünsche
+### Persönliche Verbesserungswünsche
 * Schönere Darstellung von Liniengeometrien (heute sind sie entweder pixelig dargestellt oder sie verschwinden tw unter dem Gelände). Workaround: Linien mit Offset knapp über der Oberfläche darstellen (z.B. 
+* 3D Attributdatenabfrage: getroffenes Objekt sollte besser hervorgehben werden, z.B: mit Wireframe, andere Farbe oder Bounding box
