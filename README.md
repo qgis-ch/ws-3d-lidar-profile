@@ -8,14 +8,16 @@ FOSSGIS 2023 Workshop "QGIS 3D, LiDAR Punktwolken und Profilwerkzeug"
 * Raster-Bilder: die  Höheninformation ist im Graustufenkanal (16bit Bilder) codiert. z.B. 16bit GeoTIFF-Dateien. jede Rasterzelle hat einen Höhenwert zugewiesen. So können z.B. Geländemodelle mit regelmässigem Sampling gespeichert werden.
 * Mesh-Daten: kontinuierliche Oberflächen bestehend aus unterschiedlich grossen Vielecken. 
 * 3D-Vektor-Polygondaten: Jeder Stützpunkt kann eine 3D-Koordinate beinhalten. Damit können z.B. 3D Leitungen, Strassenzüge, Gewässernetze mit 3D-Verlauf oder auch Gebäude- oder Tunnel/Höhlenmodelle abgebildet werden.
-* LiDAR Punktwolkendaten: von einem Laserscanner (flugzeuggestützt oder terrestrisch) werden Laserimpulse ausgesendet, von der Oberfläche reflektiert und ein oder mehrmals wieder empfangen. Über die Laufzeit vom Senden bis zum Empfang kann die Entfernung zum Scanner ausgerechnet werden, aus den reflektierten Impulse und deren Charakteristik können Klassierungen der Bodeneigenschaften (Gebeäude, Bäume, etc.) abgeleitet werden.
+* LiDAR Punktwolkendaten: von einem Laserscanner (flugzeuggestützt oder terrestrisch) werden Laserimpulse ausgesendet, von der Oberfläche reflektiert und ein oder mehrmals wieder empfangen. Über die Laufzeit vom Senden bis zum Empfang kann die Entfernung zum Scanner ausgerechnet werden, aus den reflektierten Impulsen und deren Charakteristik können Klassierungen der Bodeneigenschaften (Gebäude, Bäume, Wasser, etc.) abgeleitet werden.
 
 ## Beispiel Solothurn
 
 #### Download und Datenaufbereitung
-Download der folgenden Dateien (Kacheln mit je 500m Kantenlänge, KBS: EPSG:2056), separat für DOM (Punktwolken) und DTM (Rasterdatei).
+Die benötigten Übungsdaten befinden sich im obigen ZIP-Ordner zusammengefasst, aber der Vollständigkeit halber soll hier noch beschrieben werden, woher die gesammelten Daten stammen und wie sie zusammengefasst wurden:
 
 ##### DOM (LAZ)
+
+Download der folgenden Dateien (Kacheln mit je 500m Kantenlänge, KBS: EPSG:2056), separat für DOM (Punktwolken) und DTM (Rasterdatei).
 
 * [DOM LAZ-Datei 2607000/1228000](https://files.geo.so.ch/ch.so.agi.lidar_2019.dsm/aktuell/2607000_1228000.ch.so.agi.lidar_2019.dsm.laz)
 * [DOM LAZ-Datei 2607000/1228500](https://files.geo.so.ch/ch.so.agi.lidar_2019.dsm/aktuell/2607000_1228500.ch.so.agi.lidar_2019.dsm.laz)
@@ -74,11 +76,19 @@ Danach werden alle 4 Datein in ein COG (cloud optimized GeoTIFF mit Pyramiden) z
 gdalwarp -ot FLOAT32 -of COG -t_srs EPSG:2056 -co COMPRESS=DEFLATE -co OVERVIEW_RESAMPLING=CUBIC *.tif solothurn_dtm_2019_25cm.tif
 ```
 
-##### SwissBuildings3D
+##### swissBuildings3D
+Die 3D-Gebäuddaten können von der swisstopo [wwissBuildings3D-Website](https://www.swisstopo.admin.ch/de/geodata/landscape/buildings3d3.html#download) heruntergeladen werden.
 
+Es wird die folgende Kachel benötigt:
+
+```
+wget https://data.geo.admin.ch/ch.swisstopo.swissbuildings3d_3_0/swissbuildings3d_3_0_2018_1127-12/swissbuildings3d_3_0_2018_1127-12_2056_5728.gdb.zip
+```
+
+Die Daten werden im ESRI FGDB-Format angeboten. Diese können von QGIS gelesen werden. Der gewünschte Ausschnitt kann selektiert und die selektierten Objekte danach in einer GPKG-Datei gespeichert werden (Gewählte Objekte Speichern als). Leider existiert im QGIS derzeit kein zuverlässiger 3D Clip-Algorithmus der 3D Gebäude an Kachelgrenzen schneiden kann.
 
 ##### swissTLM3D
-Die Daten können von der SwissTopo [swissTLM3D Website](https://www.swisstopo.admin.ch/de/geodata/landscape/tlm3d.html#download) heruntergeladen werden. Wir empfehlen die Variante via Geopackage:
+Der swissTLM3D enthält Bodenbedeckungen, Einzelobjekte, Liniengeometrien (z.B. Verkehr und andere Infrastruktur) und Punkte mit Z-Koordinaten. Die Daten können von der swisstopo [swissTLM3D Website](https://www.swisstopo.admin.ch/de/geodata/landscape/tlm3d.html#download) heruntergeladen werden. Es kann nur die gesamte Schweiz in einem Multi-Gigabyte Gesamtdatensatz heruntergeladen werden. Es werden verschiedene Datenformate angeboten. Wir empfehlen die Variante via Geopackage:
 
 ```
 wget https://data.geo.admin.ch/ch.swisstopo.swisstlm3d/swisstlm3d_2023-03/swisstlm3d_2023-03_2056_5728.gpkg.zip
@@ -127,7 +137,9 @@ Verfügbare Interaktionswerkzeuge in der 3D-Szene:
 
 ## Ausblick
 
-### Konkret in der Pipeline
+### Konkret in der Pipeline (aus dem [letzten 3D crowdfunding-Projekt](https://www.lutraconsulting.co.uk/crowdfunding/pointcloud-processing-qgis/))
+* [Verbesserung des Messwerkzeuges](https://github.com/qgis/QGIS/pull/52208) (Anzeige der Messlinie)
+
 Punktwolken-Processing Provider (kommt mit QGIS 3.32 und benötigt PDAL 2.5, siehe [Github PR](https://github.com/qgis/QGIS/pull/52182))
 * Metadaten aus Punktwolkendatensätzen extrahieren: Anzahl Punkte, Extents, KBS, etc.
 * Punktwolkenformate konvertieren
