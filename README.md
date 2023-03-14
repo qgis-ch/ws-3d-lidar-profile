@@ -159,6 +159,6 @@ Punktwolken-Processing Provider (kommt mit QGIS 3.32 und benötigt PDAL 2.5, sie
 Alle oben erwähnten Processing-Provider können über die Werkzeug-Box aufgerufen werden (einzelner Analyseschritt), im Batch-Modus verwendet werden oder Teil eines grafischen Processing-Modells sein.
 
 ### Persönliche Verbesserungswünsche
-* Schönere Darstellung von Liniengeometrien (heute sind sie entweder pixelig dargestellt oder sie verschwinden tw unter dem Gelände). Workaround: Linien mit Offset knapp über der Oberfläche darstellen (z.B. 
+* Schönere Darstellung von Liniengeometrien (heute sind sie entweder pixelig dargestellt (aus dem darauf drapierten 2D-Kartenbild) oder sie verschwinden tw unter dem Gelände). Workaround: 3D-Linien mit Offset knapp über der Oberfläche darstellen (z.B. 0.5m über der Oberfläche), damit sie nicht partiell unter der 3D-Oberfläche verschwinden).
 * 3D Attributdatenabfrage: getroffenes Objekt sollte besser hervorgehben werden, z.B: mit Wireframe, andere Farbe oder Bounding box
 * Besseres Messwerkzeug mit Snapping und visuellem Feedback
