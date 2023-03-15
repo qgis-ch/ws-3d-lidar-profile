@@ -134,6 +134,13 @@ Verfügbare Interaktionswerkzeuge in der 3D-Szene:
 
 ![image](https://user-images.githubusercontent.com/884476/224546406-c54decda-6b73-4350-80df-4a590217fc79.png)
 
+## Styling von 3D Daten
+
+Die Einstellungen zur 3D-Grafik eines Layers erfolgt über die "Layereigenschaften" → "3D Ansicht":
+
+![image](https://user-images.githubusercontent.com/884476/225347198-190a4518-c550-4332-803a-47e1c6977af5.png)
+
+Falls ein Layer eine 3D-Darstellung zugewiesen hat, dann wird die 2D Repräsentation im 3D-View ignoriert, falls nicht, dann wird die 2D Repräsentation über das Geländemodell drauf drapiert.
 
 ## Ausblick
 
