@@ -142,6 +142,18 @@ Die Einstellungen zur 3D-Grafik eines Layers erfolgt über die "Layereigenschaft
 
 Falls ein Layer eine 3D-Darstellung zugewiesen hat, dann wird die 2D Repräsentation im 3D-View ignoriert, falls nicht, dann wird die 2D Repräsentation über das Geländemodell drauf drapiert.
 
+## Styling von LiDAR Point Cloud Daten
+
+Punktwolkendaten können verschieden dargestellt werden:
+* Einfarbig
+* RGB Werte (falls vorhanden, im Solothurn Beispiel nicht der Fall)
+* Klassierung nach Attributen (in Solothurn vorhanden)
+* Attribute nach Verlauf, z.B. nach Intensität der Rückstrahlung (Dächer und Plätze haben mehr Intensität als z.B. Bäume bei der Rückstrahlung)
+
+![image](https://user-images.githubusercontent.com/884476/225384014-2134a698-8364-40c4-8660-7d7a48378686.png)
+
+Es werden in der Regel nicht alle Punkte dargestellt, sondern ausgedünnte Punkte. Das Punktbudget (z.B. 5 Millionen) legt fest wieviele Punkte gleichzeitig maximal dargestellt werden sollen.
+
 ## Ausblick
 
 ### Konkret in der Pipeline (aus dem [letzten 3D crowdfunding-Projekt](https://www.lutraconsulting.co.uk/crowdfunding/pointcloud-processing-qgis/))
