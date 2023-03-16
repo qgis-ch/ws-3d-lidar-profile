@@ -142,6 +142,16 @@ Die Einstellungen zur 3D-Grafik eines Layers erfolgt über die "Layereigenschaft
 
 Falls ein Layer eine 3D-Darstellung zugewiesen hat, dann wird die 2D Repräsentation im 3D-View ignoriert, falls nicht, dann wird die 2D Repräsentation über das Geländemodell drauf drapiert.
 
+Im Gegensatz zur 2D-Darstellung, gibt es bei der 3D Darstellung noch weniger Optionen und auch keine zusammengesetzten Symbole. Man kann aber mit der regelbasierten 3D-Darstellung ein Objekt auch mehrfach zeichnen, z.B. um einen Baum aus einen Zylinder (Stamm) und einer Kugel (Krone) zusammenzusetzen:
+
+![image](https://user-images.githubusercontent.com/884476/225525097-c149637b-b03f-47c2-bbe4-2ad92a35d330.png)
+
+Einstellungen zum Baumstamm (Zylinder):
+![image](https://user-images.githubusercontent.com/884476/225525630-efc29f8f-53a0-48ee-887b-ae03a6068b81.png)
+
+Einstellungen zur Baumkrone (Kugel):
+
+
 ## Styling von LiDAR Point Cloud Daten
 
 Punktwolkendaten können verschieden dargestellt werden:
