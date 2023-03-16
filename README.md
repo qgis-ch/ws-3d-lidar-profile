@@ -170,9 +170,16 @@ Das Profilwerkzeug kann über das Menü "Ansicht" → "Geländehöhenprofil" ges
 
 Die Profillinie kann direkt in der Karte gezeichnet werden oder aus einer bestehenden Linie (z.B. Strassenachse) übernommen werden.
 
-Ein Doppelklick auf einer Ebene öffnet die Darstellungseigenschaften bezüglich des Profils.
+Ein Doppelklick auf einer Ebene öffnet die Darstellungseigenschaften bezüglich des Profils:
+![image](https://user-images.githubusercontent.com/884476/225533778-bc823eb2-1c1f-467a-8cd6-c6417d56823b.png)
 
+Im Beispiel sieht man die Profildarstellung des Layers "Eisenbahn" - ein Linienlayer - der aber beim Schneiden mit einer Profillinie als "Punkt" dargestellt wird. Man muss die Höhenbindung, Repräsentationsart und Punktdarstellung konfigurieren.
 
+Bei Punktsymbolen empfiehlt es sich zudem, den vertikalen Ankerpunkt des Symbols auf "unten" zu setzen, damit das Symbol wirklich auf der Profillinie "aufsetzt":
+
+![image](https://user-images.githubusercontent.com/884476/225534450-baa588ef-8971-40ae-8a8f-a8be43b6ad83.png)
+
+## Geländehöhenprofil im Layout verwenden
 
 ## Ausblick
 
