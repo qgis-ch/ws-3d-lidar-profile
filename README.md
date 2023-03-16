@@ -179,6 +179,10 @@ Bei Punktsymbolen empfiehlt es sich zudem, den vertikalen Ankerpunkt des Symbols
 
 ![image](https://user-images.githubusercontent.com/884476/225534450-baa588ef-8971-40ae-8a8f-a8be43b6ad83.png)
 
+![image](https://user-images.githubusercontent.com/884476/225534941-82faac1b-c07f-4858-a6dd-9113752a3caf.png)
+
+Leider werden bei den Symbolen im Geländehöhenprofil die Längeneinheiten (Karteneinheiten) nicht respektiert, wodurch die Symbole beim Zoomen immer gleich gross dargestellt werden. Hoffentlich wird dies in zukünftigen Versionen verbessert!
+
 ## Geländehöhenprofil im Layout verwenden
 
 ## Ausblick
