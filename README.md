@@ -184,6 +184,10 @@ Bei Punktsymbolen empfiehlt es sich zudem, den vertikalen Ankerpunkt des Symbols
 Leider werden bei den Symbolen im Geländehöhenprofil die Längeneinheiten (Karteneinheiten) nicht respektiert, wodurch die Symbole beim Zoomen immer gleich gross dargestellt werden. Hoffentlich wird dies in zukünftigen Versionen verbessert!
 
 ## Geländehöhenprofil im Layout verwenden
+Im Kartenlayout kann ein Geländehöhenprofile eingesetzt werden:
+![image](https://user-images.githubusercontent.com/884476/225548078-7c8ab875-2a35-4b62-8969-22e0811731b6.png)
+
+Im kontextsensitiven Einstellungs-Bereich können die Eigenschaften des Profils, wie Intervalle bei den Achsen, Beschriftungen, Gitterlinien, etc. eingestellt werden.
 
 ## Ausblick
 
