@@ -150,7 +150,7 @@ Einstellungen zum Baumstamm (Zylinder):
 ![image](https://user-images.githubusercontent.com/884476/225525630-efc29f8f-53a0-48ee-887b-ae03a6068b81.png)
 
 Einstellungen zur Baumkrone (Kugel):
-
+![image](https://user-images.githubusercontent.com/884476/225526455-10bd4afe-d962-409c-bc26-a29a8abc6dad.png)
 
 ## Styling von LiDAR Point Cloud Daten
 
@@ -163,6 +163,16 @@ Punktwolkendaten können verschieden dargestellt werden:
 ![image](https://user-images.githubusercontent.com/884476/225384014-2134a698-8364-40c4-8660-7d7a48378686.png)
 
 Es werden in der Regel nicht alle Punkte dargestellt, sondern ausgedünnte Punkte. Das Punktbudget (z.B. 5 Millionen) legt fest wieviele Punkte gleichzeitig maximal dargestellt werden sollen.
+
+## Geländehöhenprofil erstellen
+Das Profilwerkzeug kann über das Menü "Ansicht" → "Geländehöhenprofil" gestartet werden. Ein eigenes Dockpanel geht auf:
+![image](https://user-images.githubusercontent.com/884476/225532488-30c55b85-4d3a-4aac-922e-bbdf28c6a1b4.png)
+
+Die Profillinie kann direkt in der Karte gezeichnet werden oder aus einer bestehenden Linie (z.B. Strassenachse) übernommen werden.
+
+Ein Doppelklick auf einer Ebene öffnet die Darstellungseigenschaften bezüglich des Profils.
+
+
 
 ## Ausblick
 
