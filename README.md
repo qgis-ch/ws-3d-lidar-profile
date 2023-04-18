@@ -69,39 +69,39 @@ docker run -it -v $(pwd):/opt/data/ pdal/pdal pdal pipeline /opt/data/pdal-pipel
 wget https://files.geo.so.ch/ch.so.agi.lidar_2019.dtm/aktuell/2607000_1228000.ch.so.agi.lidar_2019.dtm.tif https://files.geo.so.ch/ch.so.agi.lidar_2019.dtm/aktuell/2607000_1228500.ch.so.agi.lidar_2019.dtm.tif https://files.geo.so.ch/ch.so.agi.lidar_2019.dtm/aktuell/2607500_1228000.ch.so.agi.lidar_2019.dtm.tif https://files.geo.so.ch/ch.so.agi.lidar_2019.dtm/aktuell/2607500_1228500.ch.so.agi.lidar_2019.dtm.tif 
 ```
 
-Danach werden alle 4 Datein in ein COG (cloud optimized GeoTIFF mit Pyramiden) zusammengefasst, z.B. über den folgenden Befehl:
+After download, all 4 files are merged into a COG GeoTIFF (cloud optimized GeoTIFF with pyramids), using a command like the following
 
 ```
 gdalwarp -ot FLOAT32 -of COG -t_srs EPSG:2056 -co COMPRESS=DEFLATE -co OVERVIEW_RESAMPLING=CUBIC *.tif solothurn_dtm_2019_25cm.tif
 ```
 
 ##### swissBuildings3D
-Die 3D-Gebäuddaten können von der swisstopo [wwissBuildings3D-Website](https://www.swisstopo.admin.ch/de/geodata/landscape/buildings3d3.html#download) heruntergeladen werden.
+The 3D building data can be downloaded from the swisstopo [swissBuildings3D-Website](https://www.swisstopo.admin.ch/de/geodata/landscape/buildings3d3.html#download)
 
-Es wird die folgende Kachel benötigt:
+We need the following tile:
 
 ```
 wget https://data.geo.admin.ch/ch.swisstopo.swissbuildings3d_3_0/swissbuildings3d_3_0_2018_1127-12/swissbuildings3d_3_0_2018_1127-12_2056_5728.gdb.zip
 ```
 
-Die Daten werden im ESRI FGDB-Format angeboten. Diese können von QGIS gelesen werden. Der gewünschte Ausschnitt kann selektiert und die selektierten Objekte danach in einer GPKG-Datei gespeichert werden (Gewählte Objekte Speichern als). Leider existiert im QGIS derzeit kein zuverlässiger 3D Clip-Algorithmus der 3D Gebäude an Kachelgrenzen schneiden kann.
+The data is offered in ESRI FGDB format. It can be directly read by QGIS. The desired extent can be selected and the selected objects can then be saved in a GPKG file (Save selected objects as). Unfortunately, there is currently no reliable 3D clip algorithm in QGIS that can clip 3D buildings at tile boundaries.
 
 ##### swissTLM3D
-Der swissTLM3D enthält Bodenbedeckungen, Einzelobjekte, Liniengeometrien (z.B. Verkehr und andere Infrastruktur) und Punkte mit Z-Koordinaten. Die Daten können von der swisstopo [swissTLM3D Website](https://www.swisstopo.admin.ch/de/geodata/landscape/tlm3d.html#download) heruntergeladen werden. Es kann nur die gesamte Schweiz in einem Multi-Gigabyte Gesamtdatensatz heruntergeladen werden. Es werden verschiedene Datenformate angeboten. Wir empfehlen die Variante via Geopackage:
+The swissTLM3D contains land cover, individual objects, line geometries (e.g. traffic and other infrastructure) and points with Z coordinates. The data can be downloaded from swisstopo [swissTLM3D website](https://www.swisstopo.admin.ch/de/geodata/landscape/tlm3d.html#download). Only the whole of Switzerland can be downloaded in a multi-gigabyte total dataset. Different data formats are offered. We recommend the variant via Geopackage:
 
 ```
 wget https://data.geo.admin.ch/ch.swisstopo.swisstlm3d/swisstlm3d_2023-03/swisstlm3d_2023-03_2056_5728.gpkg.zip
 ```
 
-Im Datensatz ist die gesamte Schweiz enthalten. Wir können die Objekte via Auswahl auf den gewünschten Ausschnitt reduzieren: im QGIS grafisch selektieren und "Speichern unter".
+The dataset contains the whole of Switzerland. We can reduce the objects via selection to the desired extent: select graphically in QGIS and "Save as".
 
 
-## 3D Szene öffnen und einrichten
-Neue 3D Ansicht als separates Fenster oder dock hinzufügen über Menü "Ansicht" → "3D Kartenansichten" → "Neue 3D-Kartenansicht".
+## Opening and configuring a new 3D scene in QGIS
+A new 3D view can be added as a separate window or docked in the main QGIS windows using the menu "View" → "3D Map View" → "New 3D Map View".
 
 ![image](https://user-images.githubusercontent.com/884476/224544908-b1e6b7f8-8475-492e-83c9-bb7047ba026a.png)
 
-Verfügbare Interaktionswerkzeuge in der 3D-Szene:
+The following tools are available for interaction with the 3D scene:
 
 ![image](https://user-images.githubusercontent.com/884476/224545483-3af8bee9-4e20-4db0-8676-6b8e1c3acb87.png)
 
