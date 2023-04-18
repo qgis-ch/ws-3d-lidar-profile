@@ -7,17 +7,17 @@ Workshop "QGIS 3D, LiDAR Punktwolken und Profilwerkzeug"
 
 * Raster Images: the height information (terrain model) is encoded in gray scale (16bit images). Each raster cell has a height value assinged. Can be used to store terrain models with regular sampling.
 * Mesh-data: continuous surfaces consisting on irregular triangles, quadrilaterals (quads), or other simple convex polygons (n-gons).
-* 3D vector polygon data: Each vertex can have a z-value assigned in the coordinates. This can be used to store 3d information on utility lines, road 
-* LiDAR Punktwolkendaten: von einem Laserscanner (flugzeuggestützt oder terrestrisch) werden Laserimpulse ausgesendet, von der Oberfläche reflektiert und ein oder mehrmals wieder empfangen. Über die Laufzeit vom Senden bis zum Empfang kann die Entfernung zum Scanner ausgerechnet werden, aus den reflektierten Impulsen und deren Charakteristik können Klassierungen der Bodeneigenschaften (Gebäude, Bäume, Wasser, etc.) abgeleitet werden.
+* 3D vector polygon data: Each vertex can have a z-value assigned in the coordinates. This can be used to store 3d information on utility lines, road or river network data with 3D information, cave or tunnel models
+* LiDAR point cloud data: captured by a laser scanner device (air based or terrestric) that sends out laser impulses, that are reflected from the surfaces suveyed one or multiple times. The distance to the scanner can be calculated via the transit time of the laser impulses from transmission to reception, and classifications of ground properties (buildings, trees, water, etc.) can be derived from the reflected pulses and their characteristics.
 
-## Beispiel Solothurn
+## Sample Data Solothurn
 
-#### Download und Datenaufbereitung
-Die benötigten Übungsdaten befinden sich im obigen ZIP-Ordner zusammengefasst, aber der Vollständigkeit halber soll hier noch beschrieben werden, woher die gesammelten Daten stammen und wie sie zusammengefasst wurden:
+#### Download and data preparation
+The required exercise data is provided in the ZIP folder above, but for the sake of completeness, here is a description of where the collected data came from and how it was compiled:
 
 ##### DOM (LAZ)
 
-Download der folgenden Dateien (Kacheln mit je 500m Kantenlänge, KBS: EPSG:2056), separat für DOM (Punktwolken) und DTM (Rasterdatei).
+Download of the following files (tiles with 500m width and height, CRS: EPSG:2056), separate for DOM (point clouds) and DTM (TIFF raster file).
 
 * [DOM LAZ-Datei 2607000/1228000](https://files.geo.so.ch/ch.so.agi.lidar_2019.dsm/aktuell/2607000_1228000.ch.so.agi.lidar_2019.dsm.laz)
 * [DOM LAZ-Datei 2607000/1228500](https://files.geo.so.ch/ch.so.agi.lidar_2019.dsm/aktuell/2607000_1228500.ch.so.agi.lidar_2019.dsm.laz)
@@ -28,7 +28,7 @@ Download der folgenden Dateien (Kacheln mit je 500m Kantenlänge, KBS: EPSG:2056
 wget https://files.geo.so.ch/ch.so.agi.lidar_2019.dsm/aktuell/2607000_1228000.ch.so.agi.lidar_2019.dsm.laz https://files.geo.so.ch/ch.so.agi.lidar_2019.dsm/aktuell/2607000_1228500.ch.so.agi.lidar_2019.dsm.laz https://files.geo.so.ch/ch.so.agi.lidar_2019.dsm/aktuell/2607500_1228000.ch.so.agi.lidar_2019.dsm.laz https://files.geo.so.ch/ch.so.agi.lidar_2019.dsm/aktuell/2607500_1228500.ch.so.agi.lidar_2019.dsm.laz
 
 ```
-Danach alle 4 LAZ-Dateien per pdal pipeline (Dateiname: pdal-pipeline_merge_and_convert-to-copc.json) in eine Datei mergen und nach copc konvertieren (braucht mindestens PDAL 2.4):
+After that, all 4 LAZ files should be merged into a single COPC LAZ file (filename pdal-pipeline_merge_and_convert-to-copc.json - requires PDAL 2.4 or higher)
 ```
 [
     "2607000_1228000.ch.so.agi.lidar_2019.dsm.laz",
@@ -45,13 +45,12 @@ Danach alle 4 LAZ-Dateien per pdal pipeline (Dateiname: pdal-pipeline_merge_and_
 ]
 ```
 
-und Aufruf Kommando mit
-
+and the command can be started as follows
 ```
 pdal pipeline pdal-pipeline_merge_and_convert-to-copc.json
 ```
 
-oder mit der docker-Variante (das docker pull pdal/pdal muss nur 1x gemacht werden; bei der docker-Variante muss bei den Dateipfaden bei der Verwendung wie unten jeweils ein /opt/data vorangestellt werden, bei sämtlichen input Files und output files - weil das aktuelle Directory im docker unter /opt/data gemountet ist):
+or with the docker variant (the docker pull pdal/pdal has to be done only once; with the docker variant you have to prepend /opt/data to the file paths when using them as below, for all input files and output files - because the current directory is mounted in docker under /opt/data):
 
 ```
 docker pull pdal/pdal
