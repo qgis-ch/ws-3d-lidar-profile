@@ -3,11 +3,11 @@ Workshop "QGIS 3D, LiDAR Punktwolken und Profilwerkzeug"
 
 [Download Sample Data Solothurn](https://www.carto.net/neumann/qgis-3d-lidar-workshop/solothurn_data.zip) - contains terrain model, orthofoto, 3D buildings, landcover and LiDAR-data, as well as a QGIS project (.qgs).
 
-## 3D Datenstrukturen für Darstellung und Analyse in QGIS
+## 3D data structures for the display and analysis in QGIS
 
-* Raster-Bilder: die  Höheninformation ist im Graustufenkanal (16bit Bilder) codiert. z.B. 16bit GeoTIFF-Dateien. jede Rasterzelle hat einen Höhenwert zugewiesen. So können z.B. Geländemodelle mit regelmässigem Sampling gespeichert werden.
-* Mesh-Daten: kontinuierliche Oberflächen bestehend aus unterschiedlich grossen Vielecken. 
-* 3D-Vektor-Polygondaten: Jeder Stützpunkt kann eine 3D-Koordinate beinhalten. Damit können z.B. 3D Leitungen, Strassenzüge, Gewässernetze mit 3D-Verlauf oder auch Gebäude- oder Tunnel/Höhlenmodelle abgebildet werden.
+* Raster Images: the height information (terrain model) is encoded in gray scale (16bit images). Each raster cell has a height value assinged. Can be used to store terrain models with regular sampling.
+* Mesh-data: continuous surfaces consisting on irregular triangles, quadrilaterals (quads), or other simple convex polygons (n-gons).
+* 3D vector polygon data: Each vertex can have a z-value assigned in the coordinates. This can be used to store 3d information on utility lines, road 
 * LiDAR Punktwolkendaten: von einem Laserscanner (flugzeuggestützt oder terrestrisch) werden Laserimpulse ausgesendet, von der Oberfläche reflektiert und ein oder mehrmals wieder empfangen. Über die Laufzeit vom Senden bis zum Empfang kann die Entfernung zum Scanner ausgerechnet werden, aus den reflektierten Impulsen und deren Charakteristik können Klassierungen der Bodeneigenschaften (Gebäude, Bäume, Wasser, etc.) abgeleitet werden.
 
 ## Beispiel Solothurn
