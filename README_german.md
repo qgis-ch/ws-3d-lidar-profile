@@ -1,7 +1,7 @@
 # ws-3d-lidar-profile
 FOSSGIS 2023 Workshop "QGIS 3D, LiDAR Punktwolken und Profilwerkzeug"
 
-[Download Übungsdaten Solothurn](https://www.carto.net/neumann/fossgis_workshop_2023/solothurn_data.zip) - enthält Höhenmodell, Orthofoto, 3D Gebäude, Bodenbedeckung und LiDAR-Daten, sowie ein QGIS Projekt (.qgs).
+[Download Übungsdaten Solothurn](https://www.carto.net/neumann/qgis-3d-lidar-workshop/solothurn_data.zip) - enthält Höhenmodell, Orthofoto, 3D Gebäude, Bodenbedeckung und LiDAR-Daten, sowie ein QGIS Projekt (.qgs).
 
 ## 3D Datenstrukturen für Darstellung und Analyse in QGIS
 
