@@ -130,7 +130,7 @@ The following tools are available for interaction with the 3D scene:
 * Plus/Minus Buttons for zooming in/out
 * Extra Buttons for tilting the whole scene
 
-![image](https://user-images.githubusercontent.com/884476/233048317-5fc40e5a-d4d3-4e1b-904b-b73bb57ea42c.png)
+![image](https://user-images.githubusercontent.com/884476/233048697-91c746be-9138-4002-b85d-2bcd9ae1b946.png)
 
 ## Styling of 3D Data
 
