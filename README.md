@@ -103,8 +103,7 @@ A new 3D view can be added as a separate window or docked in the main QGIS windo
 
 The following tools are available for interaction with the 3D scene:
 
-![image](https://user-images.githubusercontent.com/884476/224545483-3af8bee9-4e20-4db0-8676-6b8e1c3acb87.png)
-
+![image](https://user-images.githubusercontent.com/884476/233043748-7d8ce262-d77c-4ef9-89ba-7e72d44e94cd.png)
 
 ## Navigation in the 3D-Scene
 
