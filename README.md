@@ -106,30 +106,30 @@ The following tools are available for interaction with the 3D scene:
 ![image](https://user-images.githubusercontent.com/884476/224545483-3af8bee9-4e20-4db0-8676-6b8e1c3acb87.png)
 
 
-## Navigation in 3D-Szene
+## Navigation in the 3D-Scene
 
-### Mit Maus
-* Linke Maustaste: Position im 3D-Raum verändern
-* Ctrl-Linke Maustaste: Schwenken / Umherschauen / Ausschnitt Blickwinkel verändern
-* Mittlere Maustaste (oder Shift-Linke Maustaste): Gesamte Szene rotieren. Mit 1. Klick wird der Rotationspunkt gesetzt, danach mit Maus-Drag rotieren.
-* Rechte Maustaste: Zoomen
+### With the mouse
+* Left mouse button: change position in the 3D space
+* Ctrl-left mouse button: looking around / change of the field of view
+* Middle mouse button (or Shift-left mouse button): Rotate the whole scene. With the first click you set the rotation center then with dragging you rotate the whole scene
+* Right mouse button: zooming in and out
 
-### Mit Tastatur
-* Cursortasten oben/unten: vor- und zurückbewegen
-* Cursortasten links/rechts: nach links/rechts bewegen
-* Shift Cursor links/rechts: Szene rotieren
-* Shift Cursor oben/unten: Szene kippen
-* Ctrl Cursor links/rechts: Schwenken / Umherschauen / Ausschnitt Blickwinkel verändern
-* Ctrl Cursor oben/unten: Blickrichtung nach oben / unten ändern
-* Page up: Lift nach oben nehmen (Änderung Seehöhe Betrachter)
-* Page down: Lift nach unten nehmen (Änderung Seehöhe Betrachter)
+### With the keyboard
+* Cursor keys up/down: move forward and backward
+* Cursor keys left/right: move left and right
+* Shift and cursor left/right: rotate the whole scene
+* Shift and cursor up/down: tilt the whole scene
+* Ctrl Cursor left/right: looking around / change of the field of view
+* Ctrl Cursor oben/unten: looking up and down
+* Page up: take the elevator/helicopter up while remaining in the current position (change the altitude of the viewer)
+* Page down: take the elevator/helicopter down while remaining in the current position (change the altitude of the viewer)
 
-### Mit Navigations-Widget
-* Rotation über Kompassrose
-* Buttons hoch/runter für vorwärts/rückwärtsbewegen
-* Buttons links und rechts für nach links/rechts bewegen
-* Plus/Minus Buttons zum Ein/Auszoomen
-* Buttons zum nach Kippen der Szene
+### With the Navigations-Widget
+* Rotation using the compass rose
+* Buttons up/down to move forwards/backwards
+* Buttons left and right to move left/right
+* Plus/Minus Buttons for zooming in/out
+* Extra Buttons for tilting the whole scene
 
 ![image](https://user-images.githubusercontent.com/884476/224546406-c54decda-6b73-4350-80df-4a590217fc79.png)
 
