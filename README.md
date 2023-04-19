@@ -181,7 +181,7 @@ For point symbols, it is also recommended to set the vertical anchor point of th
 ![image](https://user-images.githubusercontent.com/884476/225534941-82faac1b-c07f-4858-a6dd-9113752a3caf.png)
 Unfortunately, the symbols in the terrain height profile do not respect the length units (map units), which means that the symbols are always displayed the same size when zooming in and out. Hopefully this will be improved in future versions!
 
-## Geländehöhenprofil im Layout verwenden
+## Using the elevation profile in the layout
 A terrain height profile can be used in the map layout:
 ![image](https://user-images.githubusercontent.com/884476/225548078-7c8ab875-2a35-4b62-8969-22e0811731b6.png)
 In the context-sensitive settings section, the properties of the profile, such as intervals for axes, labels, grid lines, etc. can be set.
