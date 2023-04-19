@@ -133,85 +133,84 @@ The following tools are available for interaction with the 3D scene:
 
 ![image](https://user-images.githubusercontent.com/884476/224546406-c54decda-6b73-4350-80df-4a590217fc79.png)
 
-## Styling von 3D Daten
+## Styling of 3D Data
 
-Die Einstellungen zur 3D-Grafik eines Layers erfolgt über die "Layereigenschaften" → "3D Ansicht":
+The styling properties of the 3D graphics of a layer can be found in the "Layer Properties" → "3D View":
 
 ![image](https://user-images.githubusercontent.com/884476/225347198-190a4518-c550-4332-803a-47e1c6977af5.png)
 
-Falls ein Layer eine 3D-Darstellung zugewiesen hat, dann wird die 2D Repräsentation im 3D-View ignoriert, falls nicht, dann wird die 2D Repräsentation über das Geländemodell drauf drapiert.
+If a layer has a 3D representation assigned, then the 2D representation in the 3D view is ignored, if not, then the 2D representation is draped over the terrain model.
 
-Im Gegensatz zur 2D-Darstellung, gibt es bei der 3D Darstellung noch weniger Optionen und auch keine zusammengesetzten Symbole. Man kann aber mit der regelbasierten 3D-Darstellung ein Objekt auch mehrfach zeichnen, z.B. um einen Baum aus einen Zylinder (Stamm) und einer Kugel (Krone) zusammenzusetzen:
+In contrast to the 2D representation, there are fewer options in the 3D representation and also no composite symbols. However, with the rule-based 3D representation, you can draw an object several times, e.g. to compose a tree from a cylinder (trunk) and a sphere (crown):
 
 ![image](https://user-images.githubusercontent.com/884476/225525097-c149637b-b03f-47c2-bbe4-2ad92a35d330.png)
 
-Einstellungen zum Baumstamm (Zylinder):
+Settings for the tree trunk (cylinder):
 ![image](https://user-images.githubusercontent.com/884476/225525630-efc29f8f-53a0-48ee-887b-ae03a6068b81.png)
 
-Einstellungen zur Baumkrone (Kugel):
+Settings for the tree crown (sphere):
 ![image](https://user-images.githubusercontent.com/884476/225526455-10bd4afe-d962-409c-bc26-a29a8abc6dad.png)
 
-## Styling von LiDAR Point Cloud Daten
+## Styling of LiDAR Point Cloud Data
 
-Punktwolkendaten können verschieden dargestellt werden:
-* Einfarbig
-* RGB Werte (falls vorhanden, im Solothurn Beispiel nicht der Fall)
-* Klassierung nach Attributen (in Solothurn vorhanden)
-* Attribute nach Verlauf, z.B. nach Intensität der Rückstrahlung (Dächer und Plätze haben mehr Intensität als z.B. Bäume bei der Rückstrahlung)
+Point cloud data can be represented in different ways:
+* single color
+* RGB values (if present in the LiDAR data, not present in the case of the Solothurn data)
+* Classification attributes, e.g. building, roof, water, trees, etc. (present in the Solothurn data)
+* Color ramps based on a single attribute, e.g. a ramp according to intensity of the received signal after reflection (Roofs or sealed surfaces like streets have a higher value then e.g. trees in the signal strength)
 
 ![image](https://user-images.githubusercontent.com/884476/225384014-2134a698-8364-40c4-8660-7d7a48378686.png)
 
-Es werden in der Regel nicht alle Punkte dargestellt, sondern ausgedünnte Punkte. Das Punktbudget (z.B. 5 Millionen) legt fest wieviele Punkte gleichzeitig maximal dargestellt werden sollen.
+Normally not all points are displayed, but thinned out points. The point budget (e.g. 5 million) defines the maximum number of points to be displayed simultaneously.
 
-## Geländehöhenprofil erstellen
-Das Profilwerkzeug kann über das Menü "Ansicht" → "Geländehöhenprofil" gestartet werden. Ein eigenes Dockpanel geht auf:
+## Creating an Elevation Profile
+The elevation profile panel can be enabled in menu "View" → "Elevation Profile". A separate dock panel is displayed:
 ![image](https://user-images.githubusercontent.com/884476/225532488-30c55b85-4d3a-4aac-922e-bbdf28c6a1b4.png)
 
-Die Profillinie kann direkt in der Karte gezeichnet werden oder aus einer bestehenden Linie (z.B. Strassenachse) übernommen werden.
+The profile line can be drawn directly in the map or taken from an existing line (e.g. road axis).
 
-Ein Doppelklick auf einer Ebene öffnet die Darstellungseigenschaften bezüglich des Profils:
+Double-clicking on a layer opens the display properties related to the profile:
 ![image](https://user-images.githubusercontent.com/884476/225533778-bc823eb2-1c1f-467a-8cd6-c6417d56823b.png)
 
-Im Beispiel sieht man die Profildarstellung des Layers "Eisenbahn" - ein Linienlayer - der aber beim Schneiden mit einer Profillinie als "Punkt" dargestellt wird. Man muss die Höhenbindung, Repräsentationsart und Punktdarstellung konfigurieren.
+In the example, you can see the profile representation of the "Railway" layer - a line layer - but when it is cut with a profile line, it is represented as a "Point". It is necessary to configure the height constraint, representation type and point representation.
 
-Bei Punktsymbolen empfiehlt es sich zudem, den vertikalen Ankerpunkt des Symbols auf "unten" zu setzen, damit das Symbol wirklich auf der Profillinie "aufsetzt":
+For point symbols, it is also recommended to set the vertical anchor point of the symbol to " bottom" so that the symbol really "touches down" on the profile line:
 
 ![image](https://user-images.githubusercontent.com/884476/225534450-baa588ef-8971-40ae-8a8f-a8be43b6ad83.png)
 
 ![image](https://user-images.githubusercontent.com/884476/225534941-82faac1b-c07f-4858-a6dd-9113752a3caf.png)
-
-Leider werden bei den Symbolen im Geländehöhenprofil die Längeneinheiten (Karteneinheiten) nicht respektiert, wodurch die Symbole beim Zoomen immer gleich gross dargestellt werden. Hoffentlich wird dies in zukünftigen Versionen verbessert!
+Unfortunately, the symbols in the terrain height profile do not respect the length units (map units), which means that the symbols are always displayed the same size when zooming in and out. Hopefully this will be improved in future versions!
 
 ## Geländehöhenprofil im Layout verwenden
-Im Kartenlayout kann ein Geländehöhenprofile eingesetzt werden:
+A terrain height profile can be used in the map layout:
 ![image](https://user-images.githubusercontent.com/884476/225548078-7c8ab875-2a35-4b62-8969-22e0811731b6.png)
+In the context-sensitive settings section, the properties of the profile, such as intervals for axes, labels, grid lines, etc. can be set.
 
-Im kontextsensitiven Einstellungs-Bereich können die Eigenschaften des Profils, wie Intervalle bei den Achsen, Beschriftungen, Gitterlinien, etc. eingestellt werden.
+## Outlook
 
-## Ausblick
+### In the Pipeline (from the [previous 3D crowdfunding-Project](https://www.lutraconsulting.co.uk/crowdfunding/pointcloud-processing-qgis/))
+* [Improvements of the 3D measurement tool](https://github.com/qgis/QGIS/pull/52208) (Display of the Measurement line)
 
-### Konkret in der Pipeline (aus dem [letzten 3D crowdfunding-Projekt](https://www.lutraconsulting.co.uk/crowdfunding/pointcloud-processing-qgis/))
-* [Verbesserung des Messwerkzeuges](https://github.com/qgis/QGIS/pull/52208) (Anzeige der Messlinie)
+Point cloud processing provider (comes with QGIS 3.32 and requires PDAL 2.5, see [Github PR](https://github.com/qgis/QGIS/pull/52182))
+* Extract metadata from point cloud datasets: Number of points, extents, KBS, etc.
+* Convert point cloud formats.
+* Reproject point cloud datasets
+* Set CRS for point cloud dataset.
+* Clip: Clip point clouds by polygons.
+* Filter: extract subsets according to PDAL expressions (e.g. categories, Z-value ranges, intensity, etc.)
+* Merge: combine multiple point cloud datasets into one file
+* Tiling: break point cloud data into tiles
+* Thin: create thinned point cloud datasets
+* Extent: create polygons with "footprint" (extent) of point cloud dataset
+* Density: generate raster files with "number of points" in each raster cell value
+* Export to raster: generate 2D raster surface
+* Export to Raster via TIN: generate 2D raster surface via TIN interpolation
+* Export to vector: export the 3D points to a PointZ vector file
 
-Punktwolken-Processing Provider (kommt mit QGIS 3.32 und benötigt PDAL 2.5, siehe [Github PR](https://github.com/qgis/QGIS/pull/52182))
-* Metadaten aus Punktwolkendatensätzen extrahieren: Anzahl Punkte, Extents, KBS, etc.
-* Punktwolkenformate konvertieren
-* Punktwolkendatensätze umprojizieren
-* KBS für Punktwolkendatensatz setzen
-* Clip: Punktwolken durch Polygone beschneiden
-* Filter: Subsets extrahieren gemäss PDAL Expressions (z.B. Kategorien, Z-Wert-Bereiche, Intensität, etc.)
-* Merge: mehrere Punktwolkendatensätze in eine Datei zusammenfassen
-* Tiling: Punktwolkendaten in Kacheln zerlegen
-* Ausdünnen: ausgedünnte Punktwolkendatensätze erzeugen
-* Ausdehnung: Polygone mit "Fussabdruck" (Ausdehnung) des Punktwolkendatensatzes erzeugen
-* Density: Rasterdateien erzeugen mit "Anzahl Punkte" in jedem Rasterzellwert
-* Export zu Raster: 2D Raster-Oberfläche erzeugen
-* Export zu Raster via TIN: 2D Raster-Oberfläche erzeugen via TIN Interpolation
-* Export zu Vektor: Export der 3D-Punkte in eine PointZ Vektordatei
+All processing providers mentioned above can be called via the tool box (single analysis step), used in batch mode or be part of a graphical processing model.
 
-Alle oben erwähnten Processing-Provider können über die Werkzeug-Box aufgerufen werden (einzelner Analyseschritt), im Batch-Modus verwendet werden oder Teil eines grafischen Processing-Modells sein.
-
-### Persönliche Verbesserungswünsche
-* Schönere Darstellung von Liniengeometrien (heute sind sie entweder pixelig dargestellt (aus dem darauf drapierten 2D-Kartenbild) oder sie verschwinden tw unter dem Gelände). Workaround: 3D-Linien mit Offset knapp über der Oberfläche darstellen (z.B. 0.5m über der Oberfläche), damit sie nicht partiell unter der 3D-Oberfläche verschwinden).
-* 3D Attributdatenabfrage: getroffenes Objekt sollte besser hervorgehben werden, z.B: mit Wireframe, andere Farbe oder Bounding box
-* Besseres Messwerkzeug mit Snapping und visuellem Feedback
+### Personal wishes for improvements
+* Various improvements in the elevation profile tool - e.g. better choice of scale in the profile tool, fixing scale of both axis, support of map units for point and line symbology
+* Nicer display of line geometries (today they are either displayed pixelated (from the 2D map image draped on them) or they disappear partially under the terrain). Workaround: display 3D lines with offset just above the surface (e.g. 0.5m above the surface), so they don't partially disappear under the 3D surface).
+* 3D attribute data query: hit object should be better highlighted, e.g.: with wireframe, different color or bounding box.
+* Better measurement tool with snapping and visual feedback
