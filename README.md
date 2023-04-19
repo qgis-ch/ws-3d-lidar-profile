@@ -99,7 +99,7 @@ The dataset contains the whole of Switzerland. We can reduce the objects via sel
 ## Opening and configuring a new 3D scene in QGIS
 A new 3D view can be added as a separate window or docked in the main QGIS windows using the menu "View" → "3D Map View" → "New 3D Map View".
 
-![image](https://user-images.githubusercontent.com/884476/224544908-b1e6b7f8-8475-492e-83c9-bb7047ba026a.png)
+![image](https://user-images.githubusercontent.com/884476/233046481-53f58ce7-24e6-4164-aeb2-91bf321e71e6.png)
 
 The following tools are available for interaction with the 3D scene:
 
