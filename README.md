@@ -209,7 +209,8 @@ Point cloud processing provider (comes with QGIS 3.32 and requires PDAL 2.5, see
 All processing providers mentioned above can be called via the tool box (single analysis step), used in batch mode or be part of a graphical processing model.
 
 ### Personal wishes for improvements
-* Various improvements in the elevation profile tool - e.g. better choice of scale in the profile tool, fixing scale of both axis, support of map units for point and line symbology
+* Better stability (esp. on Windows) and for different graphics cards
+* Various improvements in the elevation profile tool - e.g. better choice of scale in the profile tool, fixing scale of both axis, support of map units for point and line symbology (this is mostly fixed in QGIS 3.32)
 * Nicer display of line geometries (today they are either displayed pixelated (from the 2D map image draped on them) or they disappear partially under the terrain). Workaround: display 3D lines with offset just above the surface (e.g. 0.5m above the surface), so they don't partially disappear under the 3D surface).
 * 3D attribute data query: hit object should be better highlighted, e.g.: with wireframe, different color or bounding box.
 * Better measurement tool with snapping and visual feedback
