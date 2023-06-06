@@ -77,7 +77,7 @@ gdalwarp -ot FLOAT32 -of COG -t_srs EPSG:2056 -co COMPRESS=DEFLATE -co OVERVIEW_
 ```
 
 ##### swissBuildings3D
-Die 3D-Gebäuddaten können von der swisstopo [wwissBuildings3D-Website](https://www.swisstopo.admin.ch/de/geodata/landscape/buildings3d3.html#download) heruntergeladen werden.
+Die 3D-Gebäuddaten können von der swisstopo [swissBuildings3D-Website](https://www.swisstopo.admin.ch/de/geodata/landscape/buildings3d3.html#download) heruntergeladen werden.
 
 Es wird die folgende Kachel benötigt:
 
