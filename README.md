@@ -1,7 +1,14 @@
 # ws-3d-lidar-profile
 Workshop "QGIS 3D, LiDAR Punktwolken und Profilwerkzeug"
 
-[Download Sample Data Solothurn](https://www.carto.net/neumann/qgis-3d-lidar-workshop/solothurn_data.zip) - contains terrain model, orthofoto, 3D buildings, landcover and LiDAR-data, as well as a QGIS project (.qgs).
+[Download Sample Data Solothurn (270MB)](https://www.carto.net/neumann/qgis-3d-lidar-workshop/solothurn_data.zip) - contains terrain model, orthofoto, 3D buildings, landcover and LiDAR-data, as well as a QGIS project (.qgs). You may also [download the extended sample data (2.2 GB)](https://www.carto.net/neumann/qgis-3d-lidar-workshop/solothurn_data_large.zip) with a larger area, containing the same data. It is recommended for fast machines with a better graphics card and enough memory.
+
+For a different point cloud data set, there are also two interesting data sets provided by [SITN](https://www.ne.ch/autorites/DDTE/SGRF/SITN/geoportail/Pages/accueil.aspx) (Canton de Neuchâtel):
+* [Aerial laser scan Neuchâtel](https://sitn.ne.ch/web/diffusion/lidar/copc/2561500_1204500_aerial.copc.laz)
+* [Terrestrial laser scan of one street in Neuchâtel](https://sitn.ne.ch/web/diffusion/lidar/copc/2561500_1204500_mobile.copc.laz)
+
+Both data sets can be loaded into the same project and 3D scene, using direct online access in the layer manager (Point cloud --> Protocol https) as indicated in the following screenshot:
+![image](https://github.com/qgis-ch/ws-3d-lidar-profile/assets/884476/0a2e8143-1201-496c-9e9f-69b57bb562e7)
 
 ## 3D data structures for the display and analysis in QGIS
 
