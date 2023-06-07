@@ -3,7 +3,7 @@ Workshop "QGIS 3D, LiDAR Punktwolken und Profilwerkzeug"
 
 [Download Sample Data Solothurn (270MB)](https://www.carto.net/neumann/qgis-3d-lidar-workshop/solothurn_data.zip) - contains terrain model, orthofoto, 3D buildings, landcover and LiDAR-data, as well as a QGIS project (.qgs). You may also [download the extended sample data (2.2 GB)](https://www.carto.net/neumann/qgis-3d-lidar-workshop/solothurn_data_large.zip) with a larger area, containing the same data. It is recommended for fast machines with a better graphics card and enough memory.
 
-For a different point cloud data set, there are also two interesting data sets provided by [SITN](https://www.ne.ch/autorites/DDTE/SGRF/SITN/geoportail/Pages/accueil.aspx) (Canton de Neuchâtel):
+For a different point cloud data set, there are also two interesting data sets provided by [SITN](https://www.ne.ch/autorites/DDTE/SGRF/SITN/geoportail/Pages/accueil.aspx) (Canton de Neuchâtel). Compared to the Solothurn data, the point clouds also contain RGB values and are execptionally dense.:
 * [Aerial laser scan Neuchâtel](https://sitn.ne.ch/web/diffusion/lidar/copc/2561500_1204500_aerial.copc.laz)
 * [Terrestrial laser scan of one street in Neuchâtel](https://sitn.ne.ch/web/diffusion/lidar/copc/2561500_1204500_mobile.copc.laz)
 
